@@ -1,9 +1,9 @@
-require(package=reshape2)
-temp<-tempfile()
-fileURL<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-filename<-basename(fileURL)
-download.file(fileURL,dest=filename, method="curl")
-unzip(filename,exdir= temp)
+    require(package=reshape2)
+    temp<-tempfile()
+    fileURL<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+    filename<-basename(fileURL)
+    download.file(fileURL,dest=filename, method="curl")
+    unzip(filename,exdir= temp)
 
 setwd(temp)
 
