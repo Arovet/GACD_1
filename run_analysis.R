@@ -1,11 +1,11 @@
-```r
+
 require(package=reshape2)
 mp<-tempfile()
 fileURL<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 filename<-basename(fileURL)
 download.file(fileURL,dest=filename, method="curl")
 unzip(filename,exdir= temp)
-```
+
 setwd(temp)
 
 activity_labels<-read.table("./UCI HAR dataset/activity_labels.txt",col.names=c("Activity_ID","Activity_Label"))
@@ -36,7 +36,7 @@ ls()->clear_list
 tidy_set<-dcast(melt_cropped,Subject_ID+Activity_ID~variable,fun=mean)
 
 rm(list=clear_list)
-```
+
 'write.table(tidy_set,file="/Users/Mick/Desktop/GACD tidy set.txt",sep=" ",row.names=F) 
 
 
