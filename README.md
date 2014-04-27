@@ -16,6 +16,6 @@ Lines 23-24 – Combines test and train datasets into *merge_set* and changes **
 
 Lines 26-31 – Searches variable column names for strings containing “**.mean..**” and “**.std..**” and drops columns that do not contain the strings
 
-lines 33-35 – **melt**s cropped set with ID variables of **Subject_ID** and **Activity_ID** then reshapes the set calculating the mean of all variables for each activity for each subject as the final tidy data set (*tidy_set*).
+lines 33-35 – **melt**'s cropped set with ID variables of **Subject_ID** and **Activity_ID** then reshapes the set calculating the mean of all variables for each activity for each subject as the final tidy data set (*tidy_set*).
 
 The remaining lines clear the workspace except for the tidy dataset and writes a .txt file to my desktop (commented out here)
