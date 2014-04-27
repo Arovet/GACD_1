@@ -1,6 +1,5 @@
-
 require(package=reshape2)
-mp<-tempfile()
+temp<-tempfile()
 fileURL<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 filename<-basename(fileURL)
 download.file(fileURL,dest=filename, method="curl")
