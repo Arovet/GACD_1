@@ -1,12 +1,11 @@
 ```r
 require(package=reshape2)
-
-temp<-tempfile()
+mp<-tempfile()
 fileURL<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 filename<-basename(fileURL)
 download.file(fileURL,dest=filename, method="curl")
 unzip(filename,exdir= temp)
-
+```
 setwd(temp)
 
 activity_labels<-read.table("./UCI HAR dataset/activity_labels.txt",col.names=c("Activity_ID","Activity_Label"))
