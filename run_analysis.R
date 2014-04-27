@@ -7,7 +7,6 @@ fileURL<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20H
 filename<-basename(fileURL)
 download.file(fileURL,dest=filename, method="curl")
 unzip(filename,exdir= temp)
-list.files(temp)
 
 setwd(temp)
 
@@ -24,13 +23,11 @@ traininglabel_train<-read.table("./UCI HAR Dataset/train/y_train.txt",col.names=
 train_set<-read.table("./UCI HAR Dataset/train/X_train.txt",col.names=features_list$feature)
 train_set<-cbind(c(sub_train,traininglabel_train),train_set)
 
-
 merge_set<-rbind(test_set,train_set)
 merge_set$Activity_ID<-factor(merge_set$Activity_ID,labels=activity_labels$Activity_Label)
 
 mean_match<-c("\\.mean\\.\\.")
 std_match<-c("\\.std\\.\\.")
-
 mean_cols<-grep(mean_match,colnames(merge_set))
 std_cols<-grep(std_match,colnames(merge_set))
 col_select<-sort(c(1,2,mean_cols,std_cols),decreasing=F)
