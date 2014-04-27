@@ -1,4 +1,4 @@
-```r
+```
 
 require(package=reshape2)
 
@@ -42,4 +42,5 @@ tidy_set<-dcast(melt_cropped,Subject_ID+Activity_ID~variable,fun=mean)
 
 rm(list=clear_list)
 'write.table(tidy_set,file="/Users/Mick/Desktop/GACD tidy set.txt",sep=" ",row.names=F) 
+
 ```
